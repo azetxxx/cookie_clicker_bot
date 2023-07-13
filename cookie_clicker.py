@@ -16,7 +16,7 @@ def runClicker(seconds):
 
 
 def getCurrFeats():
-    feat_items = driver.find_elements(By.CSS_SELECTOR, "#store div")
+    feat_items = driver.find_elements(By.CSS_SELECTOR, '#store > div:not(.grayed)')
     items_list = []
 
     for count, feat in enumerate(feat_items):
@@ -29,7 +29,7 @@ def getCurrFeats():
         items_list.append({'name': feature_name, 'price': feature_price})
         # print(get_str, end="\n\n")
 
-    return(items_list[:-1])
+    return(items_list)
 
 
 def getCurrentScore():
